@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+<!--
+Dentre diversas coisas que podemos configurar nesse arquivo, uma delas é o registro
+de managed beans, como alternativa às anotações. Por exemplo, veja como
+registraríamos o managed bean NomesBean neste arquivo. 
+Coloquei espaço nos <> para ter certeza que não será chamado.
+<m anaged-bean>
+	<managed-bean-name>nomesBean</managed-bean-name>
+		<managed-bean-class>
+			com.fgm.financeiro.model.NomesBean
+		</managed-bean-class>
+	<managed-bean-scope>view</managed-bean-scope>
+</m anaged-bean>
+
+ -->
+
+<application>
+	<message-bundle>
+		com.fgm.resources.Messages
+	</message-bundle>
+</application>
+
+</faces-config>
