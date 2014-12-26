@@ -6,6 +6,9 @@ Edição de 24/12/2013
 feito os exercicios do livro
 funcionando ! Thanks para Algaworks ! Muito bom !
 
+Este P05 separei as funcionalidades de cadastro e lista de tabelas/crud
+fiz o P06 que contém os outros exercicios do livro
+
 para ajudar peguei c[odigo do GitHub no:
 https://github.com/algaworks/ebook-jsf-financeiro
 e fui comparando com minha evolução. Depois deichei a minha evolução igual.
