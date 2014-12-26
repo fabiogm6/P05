@@ -1,15 +1,21 @@
 package com.fgm.financeiro.repository;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import com.fgm.financeiro.model.Pessoa;
 
-public class Pessoas {
+public class Pessoas implements Serializable  {
+
+	private static final long serialVersionUID = 1L;
+	
 	private EntityManager manager;
 
+	@Inject
 	public Pessoas(EntityManager manager) {
 		this.manager = manager;
 	}
@@ -17,11 +23,11 @@ public class Pessoas {
 	public Pessoa porId(Long id) {
 		return manager.find(Pessoa.class, id);
 	}
-
+	
 	public List<Pessoa> todas() {
-		System.out.println(">>>>> Pessoas >>>>> todas");
-		TypedQuery<Pessoa> query = manager.createQuery("from pessoa",
-				Pessoa.class);
+		TypedQuery<Pessoa> query = manager.createQuery(
+				"from Pessoa", Pessoa.class);
 		return query.getResultList();
 	}
+
 }

@@ -1,4 +1,4 @@
-package com.fgm.financeiro.model;
+package com.fgm.financeiro.service;
 
 public class NegocioException extends Exception {
 	private static final long serialVersionUID = 1L;

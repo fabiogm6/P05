@@ -1,5 +1,6 @@
 package com.fgm.financeiro.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -14,15 +15,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fgm.financeiro.validation.DecimalPositivo;
+
 @Entity
 @Table(name = "lancamento")
-public class Lancamento {
+public class Lancamento implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private Pessoa pessoa;
 	private String descricao;
@@ -40,17 +45,7 @@ public class Lancamento {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	/* A anotação
-	@ManyToOne indica a multiplicidade do relacionamento 
-	entre lançamentos e pessoas
-	
-	@JoinColumn indica que essa relação é conseguida através 
-	da coluna especificada na propriedade name. 
-	Para facilitar o entendimento, esse mapeamento foi
-	necessário para dizermos ao provedor JPA que existe 
-	uma chave estrangeira na coluna pessoa_id da tabela 
-	lancamento, que referencia a tabela pessoa	
-	  */ 
+
 	@NotNull
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "pessoa_id")
@@ -73,10 +68,8 @@ public class Lancamento {
 		this.descricao = descricao;
 	}
 
-	//mudei para permitir nulo aqui e no database senão fica dificil o teste toda hora ficar preenchendo
-	@NotNull
-	@DecimalMin("0")
-	@Column(precision = 10, scale = 2, nullable = true)
+	@DecimalPositivo
+	@Column(precision = 10, scale = 2, nullable = false)
 	public BigDecimal getValor() {
 		return valor;
 	}
@@ -84,12 +77,7 @@ public class Lancamento {
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
-	/*
-	  O tipo do lançamento é uma enumeração, por isso, 
-	  mapeamos com a anotação @Enumerated, indicando que 
-	  queremos armazenar a string da constante na coluna da
-	  tabela, e não o índice da constante
-	 */
+
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
@@ -100,12 +88,10 @@ public class Lancamento {
 	public void setTipo(TipoLancamento tipo) {
 		this.tipo = tipo;
 	}
-	
-	
-	//mudei para permitir nulo aqui e no database
+		
 	@NotNull
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data_vencimento", nullable = true)
+	@Column(name = "data_vencimento", nullable = false)
 	public Date getDataVencimento() {
 		return dataVencimento;
 	}
