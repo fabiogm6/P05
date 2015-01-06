@@ -13,7 +13,7 @@ import com.fgm.financeiro.repository.Pessoas;
 @FacesConverter(forClass = Pessoa.class)
 public class PessoaConverter implements Converter {
 
-	@Inject // funciona graças ao OmniFaces
+	@Inject // funciona gracas ao OmniFaces
 	private Pessoas pessoas;
 	
 	@Override

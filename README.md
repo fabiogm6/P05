@@ -1,4 +1,5 @@
 # Livro Algaworks - Estudo do fabiogm6
+https://github.com/fabiogm6/P05_fgm_ebook-jsf-financeiro.git
 Java EE 7 com JSF, PrimeFaces e CDI
 por Thiago Faria
 Edição de 24/12/2013
@@ -6,7 +7,7 @@ Edição de 24/12/2013
 feito os exercicios do livro
 funcionando ! Thanks para Algaworks ! Muito bom !
 
-Este P05 separei as funcionalidades de cadastro e lista de tabelas/crud
+==> Este P05 separei as funcionalidades de cadastro e lista de tabelas/crud
 fiz o P06 que contém os outros exercicios do livro
 
 para ajudar peguei c[odigo do GitHub no:
