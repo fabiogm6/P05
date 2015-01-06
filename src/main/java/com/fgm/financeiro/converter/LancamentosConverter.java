@@ -18,7 +18,7 @@ public class LancamentosConverter implements Converter {
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 		Lancamento retorno = null;
-		
+		System.out.println("----- LancamentosConverter > getAsObject");
 		if (value != null) {
 			retorno = this.lancamentos.porId(new Long(value));
 		}
@@ -28,6 +28,7 @@ public class LancamentosConverter implements Converter {
 
 	@Override
 	public String getAsString(FacesContext context, UIComponent component, Object value) {
+		System.out.println("----- LancamentosConverter > getAsString");
 		if (value != null) {
 			Lancamento lancamento = ((Lancamento) value); 
 			return lancamento.getId() == null ? null : lancamento.getId().toString();

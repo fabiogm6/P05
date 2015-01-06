@@ -19,7 +19,7 @@ public class PessoaConverter implements Converter {
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 		Pessoa retorno = null;
-		
+		System.out.println("------ PessoaConverter > getAsObject");
 		if (value != null) {
 			retorno = this.pessoas.porId(new Long(value));
 		}
@@ -29,6 +29,7 @@ public class PessoaConverter implements Converter {
 
 	@Override
 	public String getAsString(FacesContext context, UIComponent component, Object value) {
+		System.out.println("------ PessoaConverter > getAsString");
 		if (value != null) {
 			return ((Pessoa) value).getId().toString();
 		}

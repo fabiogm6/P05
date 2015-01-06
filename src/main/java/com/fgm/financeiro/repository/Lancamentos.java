@@ -44,6 +44,7 @@ public class Lancamentos implements Serializable {
 	}
 	
 	public Lancamento guardar(Lancamento lancamento) {
+		System.out.println("---- Lancamentos > guardar");
 		return this.manager.merge(lancamento);
 	}
 	

@@ -23,7 +23,7 @@ public class CadastroLancamentos implements Serializable {
 			throw new NegocioException(
 					"Data de pagamento não pode ser uma data futura.");
 		}
-		
+		System.out.println("---- CadastroLancamentoBean > salvar");
 		this.lancamentos.guardar(lancamento);
 	}
 	

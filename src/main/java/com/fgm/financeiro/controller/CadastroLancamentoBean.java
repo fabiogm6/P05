@@ -58,6 +58,7 @@ public class CadastroLancamentoBean implements Serializable {
 		FacesContext context = FacesContext.getCurrentInstance();
 		
 		try {
+			System.out.println("---- CadastroLancamentoBean > salvar");
 			this.cadastro.salvar(this.lancamento);
 			
 			this.lancamento = new Lancamento();

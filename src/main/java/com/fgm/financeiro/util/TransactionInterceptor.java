@@ -21,18 +21,21 @@ public class TransactionInterceptor implements Serializable {
 	public Object invoke(InvocationContext context) throws Exception {
 		EntityTransaction trx = manager.getTransaction();
 		boolean criador = false;
-		
+		System.out.println("----- TransactionInterceptor > Invoke");
 		try {
 			if (!trx.isActive()) {
 				// truque para fazer rollback no que já passou
 				// (senão, um futuro commit, confirmaria até mesmo
 				// operações sem transação)
 				trx.begin();
+				System.out.println("----- TransactionInterceptor > Invoke - try trx begin truqe rollback");
 				trx.rollback();
 				// agora sim inicia a transação
+				System.out.println("----- TransactionInterceptor > Invoke - try trx begin ");				
 				trx.begin();
 				criador = true;
 			}
+			System.out.println("----- TransactionInterceptor > Invoke - proceed");			
 			return context.proceed();
 		} catch (Exception e) {
 			if (trx != null && criador) {
