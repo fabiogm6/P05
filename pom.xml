@@ -82,6 +82,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	        <version>3.1.0</version>
 	        <scope>provided</scope>
 		</dependency>
+		
+		<!-- org.apache.commons.lang3.StringUtils -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0</version>
+		</dependency>
+		
     </dependencies>
     
     <build>

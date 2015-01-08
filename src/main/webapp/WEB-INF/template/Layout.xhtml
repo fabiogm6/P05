@@ -11,9 +11,6 @@
 </h:head>
 
 <h:body>
-	<f:metadata>
-		<f:viewAction action="#{consultaLancamentosBean.consultar}" />
-	</f:metadata>
 
 	<p:ajaxStatus styleClass="ajax-status">
 		<f:facet name="start">
@@ -41,6 +38,7 @@
 			<p:submenu label="Consultas">
 				<p:menuitem value="Pessoas" />
 				<p:menuitem value="Lançamentos" action="/ConsultaLancamentos?faces-redirect=true" />
+				<p:menuitem value="Lazy Lançamentos" action="/ConsultaLancamentosLazy?faces-redirect=true" />
 			</p:submenu>
 			<p:submenu label="Sistema">
 				<p:menuitem value="Sair" action="#{loginBean.logout}" />
