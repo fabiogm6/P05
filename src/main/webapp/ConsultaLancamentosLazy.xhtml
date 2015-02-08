@@ -18,6 +18,8 @@
 				<p:commandButton value="Consultar" update="tbl" process="@form" />
 			</h:panelGrid>
 		
+		<p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+		
 		<p:dataTable value="#{lazyConsultaLancamentosBean.model}" lazy="true" 
 				var="lancamento" border="1" cellpadding="2" cellspacing="0"
 				paginator="true" paginatorPosition="bottom" rows="5" id="tbl">

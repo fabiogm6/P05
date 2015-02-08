@@ -32,8 +32,7 @@ public class ConsultaLancamentosBean implements Serializable {
 
 	public void excluir() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		
-		try {
+		try {			
 			this.cadastro.excluir(this.lancamentoSelecionado);
 			this.consultar();
 			
@@ -55,10 +54,12 @@ public class ConsultaLancamentosBean implements Serializable {
 	}
 
 	public Lancamento getLancamentoSelecionado() {
+		System.out.println("----------- ConsultaLancamentosBean > getLancamentoSelecionado");
 		return lancamentoSelecionado;
 	}
 
 	public void setLancamentoSelecionado(Lancamento lancamentoSelecionado) {
+		System.out.println("----------- ConsultaLancamentosBean > setLancamentoSelecionado");	
 		this.lancamentoSelecionado = lancamentoSelecionado;
 	}
 

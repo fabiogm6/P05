@@ -80,8 +80,9 @@ public class LazyConsultaLancamentosBean implements Serializable {
 	
 	public void excluir() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		
+		System.out.println("************************");
 		try {
+			System.out.println(this.lancamentoSelecionado);
 			this.cadastro.excluir(this.lancamentoSelecionado);
 			this.consultar();
 			
@@ -100,14 +101,18 @@ public class LazyConsultaLancamentosBean implements Serializable {
 	}
 	
 	public List<Lancamento> getLancamentos() {
+		//acho q nunca eh executado
+		System.out.println("----------- LazyConsultaLancamentosBean > getLancamentos");
 		return lancamentos2;
 	}
 
 	public Lancamento getLancamentoSelecionado() {
+	System.out.println("----------- LazyConsultaLancamentosBean > getLancamentoSelecionado");		
 		return lancamentoSelecionado;
 	}
 
 	public void setLancamentoSelecionado(Lancamento lancamentoSelecionado) {
+		System.out.println("----------- LazyConsultaLancamentosBean > setLancamentoSelecionado");			
 		this.lancamentoSelecionado = lancamentoSelecionado;
 	}
 
